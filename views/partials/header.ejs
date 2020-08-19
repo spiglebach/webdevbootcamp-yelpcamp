@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html class="h-100" lang="en">
+	<head>
+		<title>YelpCamp</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css" integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="/stylesheets/styles.css">
+	</head>
+	<body class="d-flex flex-column h-100">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<div class="container">
+				<a class="navbar-brand" href="#">YelpCamp</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbar">
+					<div class="navbar-nav">
+						<a class="nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
+						<a class="nav-link" href="/campgrounds">Camps</a>
+					</div>
+					<div class="navbar-nav ml-auto">
+						<% if (currentUser == undefined) { %>
+							<a class="nav-link" href="/login">Login</a>
+							<a class="nav-link" href="/register">Sign up</a>
+						<% } else { %>
+							<a class="nav-link" >Logged in as: <%= currentUser.username %></a>
+							<a class="nav-link" href="/logout">Logout</a>
+						<% } %>
+					</div>
+			</div>
+		  </div>
+		</nav>
+		<div class="container text-center">
+		<% if (error && error != "") { %>
+			<div class="alert alert-danger" role="alert">
+			  <%= error %>
+			</div>
+		<% } %>
+		<% if (success && success != "") { %>
+			<div class="alert alert-success" role="alert">
+			  <%= success %>
+			</div>
+		<% } %>
+		</div>
+		
+		
+		
